@@ -1,7 +1,7 @@
 # react-output-redux
 Reactアウトプットサンプル
 
-状態管理をcontext APIを使用した構成
+状態管理にredux (redux toolkit)を使用した構成
 
 ## 目次
 1. 環境構築
