@@ -25,10 +25,6 @@ export const useTodo = () => {
       const regexp = new RegExp("^" + searchKeyword, "i");
       return todo.title.match(regexp);
     });
-    // useMemoの第二引数([originTodoList, searchKeyword])に依存して処理が実行される
-    // originTodoListとsearchKeywordの値が変更される度にfilterの検索処理が実行
-    // ただし結果が前回と同じならキャッシュを返却し処理は実行されない(無駄な処理を省いている)
-    // 詳しくはuseMemoを調べてください。
   }, [originTodoList, searchKeyword]);
 
   /* actions */

@@ -13,7 +13,7 @@ import { TodoTemplate } from "../components/templates/TodoTemplate";
  */
 export const TodoPage = () => (
   // 変更点: ローカルの状態管理→ グローバルの状態管理
-  // <TodoTemplate /> を <TodoProvider> で囲う
+  // <TodoTemplate /> を <Provider> で囲う
   <TodoProvider>
     {/* TodoProvider直下のコンポーネントでコンテキストに定義した状態、ロジックをどこでも呼び出せる */}
     <TodoTemplate />

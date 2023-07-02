@@ -8,7 +8,8 @@ import { useTodo } from "../hooks/useTodo.js";
 
 /**
  * TodoContext
- */
+*/
+// Context定義
 const TodoContext = createContext({});
 
 /**
