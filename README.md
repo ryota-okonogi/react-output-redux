@@ -41,6 +41,8 @@ yarn dev
 ### 2-2. 構成技術
 - react: 18.2.0
 - react-dom: 18.2.0
+- react-redux: 8.0.4
+- @reduxjs/toolkit: 1.8.5
 - vite: 3.1.0
 - @fortawesome/react-fontawesom: 0.2.0
 - @fortawesome/free-solid-svg-icons: 6.2.0
