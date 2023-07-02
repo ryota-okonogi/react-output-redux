@@ -6,7 +6,7 @@
 import { InputForm } from "../../atoms/InputForm";
 import { AddTodo } from "../../organisms/AddTodo";
 import { TodoList } from "../../organisms/TodoLlist";
-import { useTodoContext } from "../../../contexts/TodoContext.jsx"; // 読み込んで使う
+import { useTodo } from "../../../hooks/useTodo";
 import styles from "./styles.module.css";
 
 /**
@@ -14,17 +14,20 @@ import styles from "./styles.module.css";
  * @returns {JSX.Element}
  * @constructor
  */
+
+// なんでオブジェクトではなく配列として定義する？
+// → useTodo(src/hooks/useTodo.ts)の戻り値が配列で定義されているから
 export const TodoTemplate = () => {
-  // コンテキストから状態とロジックを呼び出してコンポーネントにあてがう
-  const {
-    addInputValue,
-    searchKeyword,
-    showTodoList,
-    onChangeAddInputValue,
-    handleAddTodo,
-    handleDeleteTodo,
-    handleChangeSearchKeyword,
-  } = useTodoContext(); // 変更点: ローカルの状態管理→ グローバルの状態管理
+  // カスタムフックから状態とロジックを呼び出してコンポーネントにあてがう
+  const [
+    { addInputValue, searchKeyword, showTodoList },
+    {
+      onChangeAddInputValue,
+      handleAddTodo,
+      handleDeleteTodo,
+      handleChangeSearchKeyword,
+    }
+  ] = useTodo(); // 変更点: ローカルの状態管理→ グローバルの状態管理
 
   return (
     <div className={styles.container}>
